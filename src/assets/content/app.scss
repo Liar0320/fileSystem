@@ -1,0 +1,59 @@
+html {
+  font-size: 16px;
+}
+#app {
+  font: 12px/20px Hiragino Sans GB, Microsoft Yahei, \\5fae\8f6f\96c5\9ed1,
+    SimSun, \\5b8b\4f53, Arial;
+}
+* {
+  margin: 0;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentcolor;
+  overflow: hidden;
+}
+
+.table-warp {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 1px 2px 0 rgba(0, 0, 0, 0.24);
+}
+.table__lich {
+  width: 100%;
+  max-width: 100%;
+  background-color: #fff;
+  & > thead > tr > th {
+    font-weight: 400;
+    color: #757575;
+    vertical-align: bottom;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+  }
+  & > thead > tr > th,
+  & > tbody > tr > th,
+  & > tfoot > tr > th,
+  & > thead > tr > td,
+  & > tbody > tr > td,
+  & > tfoot > tr > td {
+    text-align: left;
+    padding: 1rem;
+    vertical-align: top;
+    border-top: 0;
+    // transition: all 0.3s ease;
+  }
+}
+
+.table-hover {
+  &.table-mc-light-blue {
+    & > tbody > tr:hover > td,
+    & > tbody > tr:hover > th {
+      background-color: #b3e5fc;
+    }
+  }
+  & > tbody > tr:hover > td,
+  & > tbody > tr:hover > th {
+    background-color: rgba(0, 0, 0, 0.12);
+  }
+}
