@@ -2,7 +2,7 @@ import axiosInstance from '@/vendors/axiosInstance';
 // import { saveAs } from 'file-saver';
 // import moment from 'moment';
 
-let baseUrl = 'http://localhost:8181/';
+let baseUrl = process.env.VUE_APP_BASE_API;
 
 let joinPath = (path, __baseUrl = baseUrl) => {
   return `${__baseUrl}${path}`;
@@ -48,7 +48,7 @@ export const updateTemp = params => {
 
 export const login = pwd => {
   return new Promise(resolve => {
-    let bol = pwd === '159753';
+    let bol = pwd === process.env.VUE_APP_LOGIN_PWD;
 
     if (bol) {
       localStorage.setItem('pwd', pwd);

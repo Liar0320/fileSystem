@@ -3,18 +3,18 @@ import axios from 'axios';
 const axiosInstance = axios.create();
 
 axiosInstance.interceptors.request.use(
-  (config) => {
+  config => {
     return config;
   },
-  (error) => Promise.reject(error),
+  error => Promise.reject(error),
 );
 
 // 响应拦截器
 axiosInstance.interceptors.response.use(
-  (response) => {
+  response => {
     return response.data;
   },
-  (error) => {
+  error => {
     // 请求拦截器中的source.cancel会将内容发送到error中
     // 通过axios.isCancel(error)来判断是否返回有数据 有的话直接返回给用户
     if (axios.isCancel(error)) {
@@ -103,7 +103,7 @@ export default {
         const element = data[key];
 
         if (element instanceof FileList) {
-          [...element].forEach((item) => {
+          [...element].forEach(item => {
             formData.append(key, item, item.name);
           });
         } else {
@@ -117,7 +117,7 @@ export default {
       'content-type': 'multipart/form-data',
     };
     if (!config.onUploadProgress) {
-      config.onUploadProgress = (progressEvent) => {
+      config.onUploadProgress = progressEvent => {
         var complete =
           (((progressEvent.loaded / progressEvent.total) * 100) | 0) + '%';
 

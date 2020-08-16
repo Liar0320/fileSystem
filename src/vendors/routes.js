@@ -59,7 +59,7 @@ router.beforeEach((to, from, next) => {
     //   next();
     //   return true;
     // }
-    if (localStorage.getItem('pwd') === '159753') {
+    if (localStorage.getItem('pwd') === process.env.VUE_APP_LOGIN_PWD) {
       // iView.LoadingBar.start();
       next();
       return true;
