@@ -2,7 +2,7 @@ const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
   // https://cli.vuejs.org/config/#publicpath
-  publicPath: './',
+  publicPath: '/',
   outputDir: 'dist',
   assetsDir: 'assets',
   lintOnSave: true,
